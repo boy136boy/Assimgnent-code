@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Recognition Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #text {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <h1>Speech Recognition</h1>
+    <button id="start">Start Recognition</button>
+    <p id="text"></p>
+
+    <script>
+        // Speech Recognition ko check karein
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        if (!SpeechRecognition) {
+            alert("Your browser does not support speech recognition.");
+            document.getElementById("start").disabled = true; // Button disable karein
+        } else {
+            const recognition = new SpeechRecognition(); // Speech recognition ka object
+            const element = document.getElementById("text");
+
+            // Recognition properties set karein
+            recognition.continuous = false; // Sirf ek baar sunna
+            recognition.interimResults = false; // Interim results nahi dikhana
+
+            // Button par click hone par recognition shuru karein
+            document.getElementById("start").onclick = function() {
+                recognition.start(); // Recognition shuru karein
+                element.textContent = "Listening..."; // Status dikhayein
+            };
+
+            // Jab result mile, use display karein
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript; // Speech ka text
+                element.textContent = `You said: ${transcript}`; // Display karein
+            };
+
+            // Agar koi error aaye to handle karein
+            recognition.onerror = function(event) {
+                console.error("Error:", event.error);
+                element.textContent = "Error: " + event.error; // Error dikhayein
+            };
+
+            // Jab recognition khatam ho, status update karein
+            recognition.onend = function() {
+                element.textContent += " (Stopped listening)";
+            };
+        }
+    </script>
+</body>
+</html>
