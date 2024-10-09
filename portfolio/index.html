@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Haroon Rasheed's portfolio showcasing skills and experience in software engineering and web development.">
+    <title>Animated Web Portfolio</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS for styling -->
+    <link href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" rel="stylesheet"> <!-- Boxicons for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> <!-- Animation library -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> <!-- Include Montserrat Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body id="body" class="white">
+    <header class="header animate__animated animate__fadeInDown">
+        <a href="https://hacathon-milestone-grmy.vercel.app/" class="logo animate__animated animate__bounceIn" style="font-family: 'Montserrat', sans-serif;">Click My CV</a>
+        <div class="toggle-icon" id="toggle-icon">
+            <i class='bx bx-menu'></i>
+        </div>
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="active animate__animated animate__fadeIn">Home</a>
+            <a href="#about" class="animate__animated animate__fadeIn">About</a>
+            <a href="#skills" class="animate__animated animate__fadeIn">Skills</a>
+            <a href="#contact" class="animate__animated animate__fadeIn">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+<section class="home" id="home">
+    <div class="home-content animate__animated animate__fadeInLeft">
+        <h1>Hi, I'm <span>Haroon Rasheed</span></h1>
+        <div class="text-animate">
+            
+            <h3>Software Engineer & Web Developer</h3>
+        </div>
+        <p class="animate__animated animate__fadeInUp">
+            I am a seasoned full-stack Software Engineer with over 1 year of
+            professional experience, specializing in backend development. My
+            expertise lies in crafting robust and scalable SaaS-based
+            architectures on the Amazon AWS platform.
+        </p>
+        <div class="btn-box animate__animated animate__fadeInUp">
+            <a href="image/IMG_20240927_193611.jpg" target="_blank">Hire Me</a>
+            <a href="#">Let's Talk</a>
+        </div>
+    </div>
+    <div class="home-image animate__animated animate__fadeInUp">
+        <img src="image/Picsart_24-10-05_11-34-59-133.png" alt="Haroon Rasheed" />
+    </div>
+</section>
+
+    <hr>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="home-img-hover animate__animated animate__zoomIn">
+            <span class="animate home-img" style="--i:8"></span>
+            <img src="image/IMG_4416.jpg" alt="Profile Image" />
+        </div>
+        <div class="about-content animate__animated animate__fadeIn">
+            <h2>About Me</h2>
+            <p>
+                I am passionate about technology and continuously strive to learn and grow in my field.
+                My journey in the tech world has equipped me with a diverse skill set and the ability to
+                adapt to new challenges.
+            </p>
+            <h3>My Journey</h3>
+            <p>
+                From working on various projects, I have developed a deep understanding of web
+                technologies and best practices in software development. I love collaborating with
+                teams to create impactful solutions that drive results.
+            </p>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="skills-content animate__animated animate__fadeIn">
+            <h2>My Skills</h2>
+            <div class="skill-box">
+                <div class="skill animate__animated animate__fadeInUp">
+                    <h3>HTML</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;">90%</div>
+                    </div>
+                </div>
+                <div class="skill animate__animated animate__fadeInUp">
+                    <h3>CSS</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;">85%</div>
+                    </div>
+                </div>
+                <div class="skill animate__animated animate__fadeInUp">
+                    <h3>JavaScript</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%;">50%</div>
+                    </div>
+                </div>
+                <div class="skill animate__animated animate__fadeInUp">
+                    <h3>Next.js</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 30%;">30%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+<!-- Contact Page -->
+<div class="contact-container" id="contact"> <!-- Changed id from content to contact -->
+    <h2 class="fade-in">Get In Touch</h2>
+    <p class="fade-in">Drop a line. Give me a call or send a message by submitting the form.</p>
+    <a class="fade-in" href="mailto:itxharoonkhan@gmail.com">itxharoonkhan@gmail.com</a>
+
+    <form id="contactForm">
+        <label for="name" class="fade-in">Name:</label>
+        <input type="text" id="name" name="name" required class="fade-in">
+
+        <label for="email" class="fade-in">Email:</label>
+        <input type="email" id="email" name="email" required class="fade-in">
+
+        <label for="message" class="fade-in">Message:</label>
+        <textarea id="message" name="message" required class="fade-in"></textarea>
+
+        <button type="submit" class="fade-in">Send Message</button>
+    </form>
+</div>
+
+    <!-- Center Container -->
+ 
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 Haroon Rasheed</p>
+            
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

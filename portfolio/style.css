@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4; /* Light background for the page */
+}
+
+/* Header Styles */
+/* Header Styles */
+.header {
+    display: flex; /* Use flexbox for header layout */
+    justify-content: space-between; /* Space items out */
+    align-items: center; /* Center items vertically */
+    padding: 20px 30px; /* Padding for header */
+    background: #ffffff; /* White background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: fixed; /* Fixed position */
+    width: 100%; /* Full width */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Logo Styles */
+.logo {
+    font-size: 24px; /* Logo font size */
+    color: #ff4081; /* Logo color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Logo Hover Effect */
+.logo:hover {
+    color: #e91e63; /* Darker shade on hover */
+}
+
+/* Toggle Icon Styles */
+.toggle-icon {
+    display: none; /* Initially hidden */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 24px; /* Font size for the toggle icon */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex; /* Use flexbox for navbar */
+    gap: 15px; /* Space between navbar items */
+}
+
+.navbar a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Navbar link color */
+    padding: 10px 15px; /* Padding for clickable area */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s, color 0.3s; /* Smooth transitions */
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeIn 0.5s forwards; /* Fade-in animation */
+}
+
+/* Animation Delay for Navbar Links */
+.navbar a:nth-child(1) { animation-delay: 0.1s; }
+.navbar a:nth-child(2) { animation-delay: 0.2s; }
+.navbar a:nth-child(3) { animation-delay: 0.3s; }
+.navbar a:nth-child(4) { animation-delay: 0.4s; }
+
+/* Navbar Link Hover Effect */
+.navbar a:hover {
+    background: #ff4081; /* Background color on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+
+/* Active Navbar Link Style */
+.navbar a.active {
+    background: #ff4081; /* Background color for active link */
+    color: #ffffff; /* Text color for active link */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Hide navbar initially */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Absolute positioning */
+        top: 60px; /* Position below the header */
+        right: 0; /* Align to the right */
+        background: #ffffff; /* White background */
+        width: 100%; /* Full width */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        z-index: 999; /* Stack above other elements */
+    }
+
+    .navbar a {
+        padding: 15px; /* Increased padding for mobile */
+        text-align: center; /* Center align text */
+    }
+
+    .toggle-icon {
+        display: block; /* Show toggle icon on mobile */
+    }
+
+    /* Show navbar when toggled */
+    .navbar.show {
+        display: flex; /* Show navbar */
+    }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Home Section Styles */
+.home {
+    display: flex; /* Flexbox layout for home section */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 50px 20px; /* Padding for home section */
+    background: linear-gradient(to bottom right, #f4f4f4, #ffcc00); /* Gradient background */
+    border-radius: 15px; /* Rounded corners for section */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-top: 100px;
+}
+
+.home-content {
+    text-align: center; /* Center text */
+    max-width: 500px; /* Limit width for better readability */
+}
+
+.home-content h1 {
+    font-size: 48px; /* Main title size */
+    color: #ff4081; /* Main title color */
+    margin-bottom: 10px; /* Space below title */
+    animation: fadeIn 1s ease; /* Fade-in animation */
+}
+
+.home-content h3 {
+    font-size: 24px; /* Subtitle size */
+    margin: 20px 0; /* Space around subtitle */
+    color: #333; /* Subtitle color */
+    animation: slideIn 0.5s ease; /* Slide-in animation */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Home Image Styles */
+.home-image {
+    margin-top: 30px; /* Space between text and image */
+    position: relative; /* Set position for lifted effect */
+    z-index: 1; /* Ensure it appears above other elements */
+}
+
+.home-image img {
+    width: 400px; /* Set image width */
+    height: 400px; /* Maintain aspect ratio */
+    border-radius: 50%;
+    margin-left: 40px; /* Rounded corners for image */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+.home-image img:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
+}
+
+/* Button Styles */
+.btn-box {
+    display: flex; /* Flexbox for button layout */
+    justify-content: center; /* Center buttons */
+    margin-top: 20px; /* Space above buttons */
+}
+
+
+
+
+.btn-box a {
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Padding for button */
+    background: linear-gradient(135deg, #ff4081, #ffcc00); /* Gradient background */
+    color: #fff; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s; /* Transitions */
+    margin: 0 10px; /* Space between buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.btn-box a:hover {
+    background: linear-gradient(135deg, #ffcc00, #ff4081); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Scale on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* Social Icons */
+.home-sci {
+    margin: 20px 0; /* Space around social icons */
+}
+
+.home-sci a {
+    color: #333; /* Icon color */
+    font-size: 1.5em; /* Icon size */
+}
+
+/* Image Hover Effect */
+.home-img-hover {
+    position: relative; /* Position for hovering */
+    width: 150px; /* Default width */
+    height: 150px; /* Default height */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 50%; /* Circular image */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Shadow for depth */
+    border: 5px solid #ff4081; /* Border around image */
+    margin: 0 auto; /* Center the image */
+    margin-bottom: 20px; /* Space below image */
+}
+
+.home-img-hover img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover image */
+    transition: transform 0.3s; /* Transition for zoom effect */
+}
+
+.home-img-hover:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-img-hover {
+        width: 120px; /* Smaller width for tablets */
+        height: 120px; /* Smaller height for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .home-img-hover {
+        width: 100px; /* Smaller width for mobile */
+        height: 100px; /* Smaller height for mobile */
+    }
+}
+
+/* About Section Styles */
+.about {
+    padding: 50px 20px; /* Padding for about section */
+    background: #eaeaea; /* Light background for about section */
+    text-align: center; /* Center text */
+   
+}
+
+.about-content h2 {
+    font-size: 36px; /* About section title size */
+    margin-bottom: 20px; /* Space below title */
+    color: #ff4081; /* Title color */
+}
+
+.about-content p {
+    max-width: 600px; /* Max width of paragraph */
+    margin: 0 auto 20px; /* Center paragraph */
+}
+
+/* Skills Section Styles */
+.skills {
+    padding: 50px 20px; /* Padding for skills section */
+    background: #fff; /* White background for skills section */
+    text-align: center; /* Center text */
+}
+
+.skills-content h2 {
+    font-size: 36px; /* Skills section title size */
+    margin-bottom: 20px; /* Space below title */
+    color: #ff4081; /* Title color */
+}
+
+.skill-box {
+    max-width: 600px; /* Max width of skills box */
+    margin: 0 auto; /* Center skills box */
+}
+
+.skill {
+    margin: 20px 0; /* Space around each skill */
+}
+
+.progress-bar {
+    background: #eaeaea; /* Light grey background for progress bar */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    width: 100%; /* Full width */
+}
+
+.progress {
+    background: #ff4081; /* Progress color */
+    height: 20px; /* Height of progress */
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+    line-height: 20px; /* Center text vertically */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Center Container Styles */
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #ff4081, #ffcc00); /* Gradient background */
+    color: #fff; /* White text */
+    padding: 20px 0; /* Vertical padding */
+    text-align: center; /* Center text */
+    position: relative; /* Positioning context */
+}
+
+/* Contact Container Styles */
+.contact-container {
+    max-width: 600px; /* Max width of the form */
+    margin: 50px auto; /* Center it on the page */
+    padding: 30px; /* More padding for a spacious look */
+    border-radius: 10px; /* Rounded corners */
+    background: linear-gradient(135deg, #ff6f61, #de6262, #ffcc00); /* Colorful gradient background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow effect */
+    color: #fff; /* White text color */
+    text-align: center; /* Center align text */
+    animation: fadeIn 1s ease; /* Add fade-in animation */
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* Fade-in animation for child elements */
+.fade-in {
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s forwards; /* Fade in effect */
+}
+
+/* Delay animations for different elements */
+.fade-in:nth-child(1) { animation-delay: 0.2s; }
+.fade-in:nth-child(2) { animation-delay: 0.4s; }
+.fade-in:nth-child(3) { animation-delay: 0.6s; }
+.fade-in:nth-child(4) { animation-delay: 0.8s; }
+.fade-in:nth-child(5) { animation-delay: 1s; }
+.fade-in:nth-child(6) { animation-delay: 1.2s; }
+.fade-in:nth-child(7) { animation-delay: 1.4s; }
+
+/* Heading Styles */
+.contact-container h2 {
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 32px; /* Font size */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
+}
+
+/* Paragraph Styles */
+.contact-container p {
+    margin-bottom: 20px; /* Space below the paragraph */
+    font-size: 18px; /* Font size */
+    font-style: italic; /* Italic style for a casual feel */
+}
+
+/* Email Link Styles */
+.contact-container a {
+    color: #ffcc00; /* Gold color for email */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 20px; /* Space below the link */
+    display: inline-block; /* Make it an inline block for padding */
+    transition: color 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for email link */
+.contact-container a:hover {
+    color: #de6262; /* Change color on hover */
+}
+
+/* Label styling */
+.contact-container label {
+    display: block; /* Labels should be on a new line */
+    margin: 15px 0 5px; /* Space around labels */
+    font-weight: 600; /* Bold labels */
+}
+
+/* Input and textarea styling */
+.contact-container input,
+.contact-container textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Inner spacing */
+    margin-bottom: 15px; /* Space below inputs */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Increase font size for better readability */
+    transition: border 0.3s, box-shadow 0.3s; /* Smooth transition for border */
+}
+
+/* Focus effect for inputs and textareas */
+.contact-container input:focus,
+.contact-container textarea:focus {
+    outline: none; /* Remove default outline */
+    border: 2px solid #ffcc00; /* Gold border on focus */
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.5); /* Glow effect */
+}
+
+/* Button styling */
+.contact-container button {
+    width: 100%; /* Full width */
+    padding: 12px; /* Inner spacing */
+    background: linear-gradient(135deg, #007BFF, #00BFFF); /* Colorful gradient background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Increase font size for better readability */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+/* Hover effect for button */
+.contact-container button:hover {
+    background: linear-gradient(135deg, #00BFFF, #007BFF); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
